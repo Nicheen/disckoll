@@ -1,13 +1,13 @@
 {
-  "name": "DiscGolfTracker",
-  "short_name": "DiscGolf",
+  "name": "Disckoll",
+  "short_name": "Disckoll",
   "description": "Track rounds, courses, friends, and progress on the course.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#f4fbf8",
-  "theme_color": "#1aa788",
+  "background_color": "#16231f",
+  "theme_color": "#16231f",
   "icons": [
     {
       "src": "./pwa-192.png",
