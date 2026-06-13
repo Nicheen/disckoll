@@ -64,17 +64,21 @@
             root.style.setProperty("--color-accent-hover", "#" + dv(r) + dv(g) + dv(b));
             root.style.setProperty("--color-accent-rgb", r + ", " + g + ", " + b);
           }
-          if (s.mode) {
-            var dark = s.mode === "system"
-              ? window.matchMedia("(prefers-color-scheme: dark)").matches
-              : s.mode === "dark";
-            root.setAttribute("data-theme", dark ? "dark" : "light");
-          }
+          var dark = s.mode
+            ? (s.mode === "system"
+                ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                : s.mode === "dark")
+            : false;
+          root.setAttribute("data-theme", dark ? "dark" : "light");
+          // Keep the status-bar colour in sync from the first paint (matches
+          // ThemeContext --bg-root values), not just after React mounts.
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", dark ? "#101a13" : "#fffcf4");
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="./assets/index-BvITsJyw.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CKmCTpaL.css">
+    <script type="module" crossorigin src="./assets/index-Mtx2MNQw.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-JzU0jc04.css">
   </head>
   <body>
     <div id="root"></div>
