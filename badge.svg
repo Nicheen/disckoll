@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Monochrome notification badge: discs only. Android tints opaque pixels,
+       so discs are solid white on transparent. A transparent gap line traces the
+       front disc's edge so the two stacked discs stay readable at small sizes. -->
+  <mask id="gap">
+    <rect width="512" height="512" fill="white"/>
+    <ellipse cx="259.275" cy="238.91" rx="200" ry="95" transform="rotate(8 259.275 238.91)" fill="none" stroke="black" stroke-width="14"/>
+  </mask>
+  <g mask="url(#gap)">
+    <ellipse cx="258.529" cy="248.91" rx="200" ry="95" transform="rotate(8 258.529 248.91)" fill="#ffffff"/>
+    <ellipse cx="259.275" cy="238.91" rx="200" ry="95" transform="rotate(8 259.275 238.91)" fill="#ffffff"/>
+  </g>
+</svg>
