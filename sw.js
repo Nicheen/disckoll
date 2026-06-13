@@ -1,4 +1,4 @@
-const CACHE_NAME = "dgt-shell-v1";
+const CACHE_NAME = "dgt-shell-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const APP_SHELL = [
   "./pwa-192.png",
   "./pwa-512.png",
   "./apple-touch-icon.png",
+  "./badge-96.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -36,8 +37,11 @@ self.addEventListener("push", (event) => {
   const title = data.title || "Disckoll";
   const options = {
     body: data.body || "",
-    icon: "./pwa-192.png",
-    badge: "./pwa-192.png",
+    // Absolute paths so they resolve against the origin, not the SW scope.
+    // badge must be monochrome+transparent (Android tints it) or it renders
+    // as a plain square; pwa-192 is full-colour so it only suits `icon`.
+    icon: "/pwa-192.png",
+    badge: "/badge-96.png",
     tag: data.tag,
     renotify: !!data.tag,
     data: { url: data.url || "/" },
